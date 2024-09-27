@@ -238,7 +238,7 @@ def MainRegression(in_file_path, saved_dir, feature_selector_list, select_des_nu
         metrics_out_file = os.path.join(saved_dir,"model_metrics.csv")
         model.all_metrics_df.to_csv(metrics_out_file,mode="a")
         model.SaveTotalModel(saved_dir=saved_dir,saved_file_note=random_state)
-        model.GenerateBallTree(p=1,saved_dir=saved_dir)
+        # model.GenerateBallTree(p=1,saved_dir=saved_dir)
         model.DrawScatter(model.val_y_all, model.val_pred_all,  saved_dir=saved_dir, saved_file_note=model_name, data_group="validation")
         if model.test_y is not None:
             model.DrawScatter(model.test_y, model.test_pred_mean, saved_dir=saved_dir, saved_file_note=model_name)
